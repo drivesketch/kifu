@@ -88,9 +88,9 @@ rows.forEach((rowLabel) => {
 
 // ランダムな駒の符号を生成
 function generateRandomQuestion() {
-  const positions = Object.keys(pieceData); // 駒のあるマスを取得
-  const randomPosition = positions[Math.floor(Math.random() * positions.length)];
-  return randomPosition; // 例: "7六"
+  const randomRow = rows[Math.floor(Math.random() * rows.length)]; // 一～九
+  const randomCol = cols[Math.floor(Math.random() * cols.length)]; // 1～9
+  return `${randomCol}${randomRow}`; // 例: "7六"
 }
 
 // 新しい問題を出題
