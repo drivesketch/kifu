@@ -1,22 +1,37 @@
+/* styles.css */
+
+/* 全体のスタイル */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  #game {
+    margin: 20px auto;
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  #question-container {
+    margin-bottom: 20px;
 }
 
 #board {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-    /* 9列の均等分割 */
-    gap: 0px;
-  margin: 20px auto;
+  gap: 0px;
+    margin: 0 auto;
   width: 100%;
-    /* 親要素の幅にフィット */
-    max-width: 480px;
-    /* 最大幅を480pxに制限 */
-    aspect-ratio: 1 / 1;
-    /* 正方形を維持 */
+  max-width: 480px;
+  aspect-ratio: 1 / 1;
+  background-color: #ddd;
 }
 
 .cell {
@@ -26,28 +41,27 @@ body {
   justify-content: center;
   align-items: center;
   font-size: calc(1vw + 0.5rem);
-    /* 画面幅に応じたフォントサイズ */
   cursor: pointer;
+  position: relative;
+    aspect-ratio: 1 / 1;
 }
 
-/* 正解・不正解のスタイル */
+.piece {
+  font-size: 1.5rem;
+  /* font-weight: bold; */
+  color: #aaa
+}
+
+.enemy-piece {
+  transform: rotate(180deg);
+  /* 180度回転 */
+  display: inline-block;
+  /* 回転を適用するため */
+}
 .cell.correct {
   background-color: #8fbc8f;
 }
 
 .cell.wrong {
   background-color: #f08080;
-}
-
-/* スマホ対応: 小さい画面ではマス目を小さく */
-@media (max-width: 480px) {
-  #board {
-    max-width: 100%;
-    /* スマホでは画面幅にフィット */
-  }
-
-  .cell {
-    font-size: calc(2vw + 0.3rem);
-    /* より小さいフォントサイズ */
-  }
 }
