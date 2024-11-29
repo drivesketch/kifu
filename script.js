@@ -86,7 +86,7 @@ rows.forEach((rowLabel) => {
   });
 });
 
-// ランダムな駒の符号を生成
+// ランダムな符号を生成
 function generateRandomQuestion() {
   const randomRow = rows[Math.floor(Math.random() * rows.length)]; // 一～九
   const randomCol = cols[Math.floor(Math.random() * cols.length)]; // 1～9
